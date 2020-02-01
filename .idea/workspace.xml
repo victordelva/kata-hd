@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25164f54-e157-479c-b0e5-e6e3a097be38" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/.coveralls.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/.travis.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/CONTRIBUTING.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app/dependencies.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app/middleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app/repositories.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app/routes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/app/settings.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/composer.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/composer.lock" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/logs/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/public/.htaccess" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/public/index.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/Action.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/ActionError.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/ActionPayload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/User/ListUsersAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/User/UserAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Actions/User/ViewUserAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Handlers/HttpErrorHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Handlers/ShutdownHandler.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/Middleware/SessionMiddleware.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Application/ResponseEmitter/ResponseEmitter.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Domain/DomainException/DomainException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Domain/DomainException/DomainRecordNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Domain/User/User.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Domain/User/UserNotFoundException.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Domain/User/UserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/src/Infrastructure/Persistence/User/InMemoryUserRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/Application/Actions/User/ListUserActionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/Application/Actions/User/ViewUserActionTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/Domain/User/UserTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/Infrastructure/Persistence/User/InMemoryUserRepositoryTest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/TestCase.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/tests/bootstrap.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back/var/cache/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front/dev.dockerfile" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1XDk8sUFctzoOI0fGRlrnLR0bvI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25164f54-e157-479c-b0e5-e6e3a097be38" name="Default Changelist" comment="" />
+      <created>1580587896279</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1580587896279</updated>
+      <workItem from="1580587897841" duration="3410000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

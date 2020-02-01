@@ -1,0 +1,33 @@
+version: '3'
+
+volumes:
+  logs:
+    driver: local
+
+services:
+  slim:
+    image: php:7-alpine
+    working_dir: /var/www
+    command: php -S 0.0.0.0:8080 -t public
+    environment:
+      docker: "true"
+    ports:
+      - 8080:8080
+    volumes:
+      - ./back:/var/www
+      - logs:/var/www/logs
+
+  front:
+    container_name: front
+    hostname: front
+    build:
+      context: ./front
+      dockerfile: dev.dockerfile
+    volumes:
+      - ./front:/usr/front
+      - /usr/front/node_modules
+    ports:
+      - '3000:3000'
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
