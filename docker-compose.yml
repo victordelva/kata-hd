@@ -3,10 +3,14 @@ version: '3'
 volumes:
   logs:
     driver: local
+  dbdata:
+    driver: local
 
 services:
   back:
-    image: php:7-alpine
+    build:
+      context: ./back
+      dockerfile: dev.dockerfile
     container_name: back
     working_dir: /var/www
     command: php -S 0.0.0.0:8080 -t public
@@ -40,19 +44,21 @@ services:
     networks:
       - my-network
 
-  mongodb:
-    image: mongo:latest
-    container_name: "mongodb"
-    environment:
-      - MONGO_DATA_DIR=/data/db
-      - MONGO_LOG_DIR=/dev/null
-      - MONGODB_USER="user"
-      - MONGODB_PASS="pass"
-    volumes:
-      - ./data/db:/data/db
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: unless-stopped
+    tty: true
     ports:
-      - 27017:27017
-    command: mongod --smallfiles --logpath=/dev/null # --quiet
+      - "3306:3306"
+    environment:
+      MYSQL_DATABASE: employees
+      MYSQL_ROOT_PASSWORD: root
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - dbdata:/var/lib/mysql
+      - ./mysql/my.cnf:/etc/mysql/my.cnf
     networks:
       - my-network
 

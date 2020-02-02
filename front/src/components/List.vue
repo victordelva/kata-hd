@@ -8,7 +8,7 @@
     >
       <template v-slot:top>
         <v-toolbar flat color="white">
-          <v-toolbar-title>Company </v-toolbar-title>
+          <v-toolbar-title>Company Name </v-toolbar-title>
           <v-divider
                   class="mx-4"
                   inset
@@ -178,10 +178,6 @@
         this.close()
       },
     },
-    mounted() {
-      this.fetchEmployees().then(function() {
-      });
-    }
   }
 </script>
 
