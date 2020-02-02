@@ -1,16 +1,17 @@
 <?php
 declare(strict_types=1);
 
-namespace App\Application\Actions\User;
+namespace App\Application\Actions\Employee;
 
 use App\Application\Actions\Action;
+use App\Domain\Employee\EmployeeRepository;
 use App\Domain\User\UserRepository;
 use Psr\Log\LoggerInterface;
 
-abstract class UserAction extends Action
+abstract class EmployeeAction extends Action
 {
     /**
-     * @var UserRepository
+     * @var EmployeeRepository
      */
     protected $employeeRepository;
 
@@ -18,7 +19,7 @@ abstract class UserAction extends Action
      * @param LoggerInterface $logger
      * @param UserRepository  $employeeRepository
      */
-    public function __construct(LoggerInterface $logger, UserRepository $employeeRepository)
+    public function __construct(LoggerInterface $logger, EmployeeRepository $employeeRepository)
     {
         parent::__construct($logger);
         $this->employeeRepository = $employeeRepository;
