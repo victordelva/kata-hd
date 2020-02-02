@@ -32,7 +32,7 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 40
             ),
             2 => new Employee(
-                1,
+                2,
                 'Bosco Sanchez Giralt',
                 'bsanchez@gmail.com',
                 'Comercial',
@@ -41,7 +41,7 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 40
             ),
             3 => new Employee(
-                1,
+                3,
                 'Bosco Sanchez Giralt',
                 'bsanchez@gmail.com',
                 'Comercial',
@@ -50,7 +50,7 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 40
             ),
             4 => new Employee(
-                1,
+                4,
                 'Bosco Sanchez Giralt',
                 'bsanchez@gmail.com',
                 'Comercial',
@@ -59,7 +59,7 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 40
             ),
             5 =>new Employee(
-                1,
+                5,
                 'Bosco Sanchez Giralt',
                 'bsanchez@gmail.com',
                 'Comercial',
