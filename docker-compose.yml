@@ -5,8 +5,9 @@ volumes:
     driver: local
 
 services:
-  slim:
+  back:
     image: php:7-alpine
+    container_name: back
     working_dir: /var/www
     command: php -S 0.0.0.0:8080 -t public
     environment:
@@ -16,6 +17,8 @@ services:
     volumes:
       - ./back:/var/www
       - logs:/var/www/logs
+    networks:
+      - my-network
 
   front:
     container_name: front
@@ -24,10 +27,18 @@ services:
       context: ./front
       dockerfile: dev.dockerfile
     volumes:
-      - ./front:/usr/front
-      - /usr/front/node_modules
+      - ./front:/usr/src/app/
+      - /usr/src/app/node_modules
     ports:
       - '3000:3000'
+      - '3003:3003'
     environment:
       - PORT=3000
-      - NODE_ENV=production
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - my-network
+
+networks:
+  my-network:
+    driver: bridge
