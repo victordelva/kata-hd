@@ -2,8 +2,8 @@
 
 ## Installation steps
 
-- `docker-compose up -d`
-- `composer install`
+- `docker-compose up -d --build`
+- `docker-compose exec back composer install`
 - For back service `http://0.0.0.0:8080`
 - For front app enter `http://127.0.0.0:3000`
 

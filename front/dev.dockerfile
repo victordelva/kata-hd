@@ -13,6 +13,8 @@ COPY package.json /usr/src/app/package.json
 
 RUN npm install
 RUN npm install -g @vue/cli
+RUN npm install -g @vue/cli-service-global
+
 
 # COPY . .
 COPY . /usr/src/app/
