@@ -12,7 +12,8 @@ class ListEmployeeAction extends EmployeeAction
      */
     protected function action(): Response
     {
-        $users = $this->employeeRepository->findAll();
+        $companyId = $this->request->getAttribute('company_authenticated');
+        $users = $this->employeeRepository->findAll($companyId);
 
         $this->logger->info("Employee list was viewed.");
 

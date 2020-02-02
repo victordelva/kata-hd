@@ -1,6 +1,7 @@
 <?php
 declare(strict_types=1);
 
+use App\Application\Actions\Employee\AddEmployeeAction;
 use App\Application\Actions\Employee\ListEmployeeAction;
 use App\Application\Actions\User\ListUsersAction;
 use App\Application\Actions\Employee\ViewEmployeeAction;
@@ -24,5 +25,6 @@ return function (App $app) {
     $app->group('/employees', function (Group $group) {
         $group->get('', ListEmployeeAction::class);
         $group->get('/{id}', ViewEmployeeAction::class);
+        $group->post('', AddEmployeeAction::class);
     });
 };

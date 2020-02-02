@@ -45,6 +45,11 @@ class Employee implements JsonSerializable
     private $weeklyHours;
 
     /**
+     * @var int
+     */
+    private $companyId;
+
+    /**
      * @param int|null  $id
      * @param string    $name
      * @param string    $email
@@ -52,6 +57,7 @@ class Employee implements JsonSerializable
      * @param string    $office
      * @param int    $salary
      * @param int    $weeklyHours
+     * @param int    $companyId
      */
     public function __construct(?int $id,
                                 string $name,
@@ -59,7 +65,8 @@ class Employee implements JsonSerializable
                                 string $position,
                                 string $office,
                                 int $salary,
-                                int $weeklyHours
+                                int $weeklyHours,
+                                int $companyId
     ) {
         $this->id = $id;
         $this->name = strtolower($name);
@@ -68,6 +75,7 @@ class Employee implements JsonSerializable
         $this->office = ucfirst($office);
         $this->salary = $salary;
         $this->weeklyHours = $weeklyHours;
+        $this->companyId = $companyId;
     }
 
     /**
@@ -108,6 +116,14 @@ class Employee implements JsonSerializable
     public function getOffice(): string
     {
         return $this->office;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCompanyId(): int
+    {
+        return $this->companyId;
     }
 
     /**

@@ -29,7 +29,8 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 'Comercial',
                 'Barcelona Office',
                 20000,
-                40
+                40,
+                1
             ),
             2 => new Employee(
                 2,
@@ -38,7 +39,8 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 'Comercial',
                 'Barcelona Office',
                 20000,
-                40
+                40,
+                1
             ),
             3 => new Employee(
                 3,
@@ -47,7 +49,8 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 'Comercial',
                 'Barcelona Office',
                 20000,
-                40
+                40,
+                1
             ),
             4 => new Employee(
                 4,
@@ -56,7 +59,8 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 'Comercial',
                 'Barcelona Office',
                 20000,
-                40
+                40,
+                1
             ),
             5 =>new Employee(
                 5,
@@ -65,7 +69,8 @@ class InMemoryEmployeeRepository implements EmployeeRepository
                 'Comercial',
                 'Barcelona Office',
                 20000,
-                40
+                40,
+                2
             ),
         ];
     }
@@ -73,9 +78,13 @@ class InMemoryEmployeeRepository implements EmployeeRepository
     /**
      * {@inheritdoc}
      */
-    public function findAll(): array
+    public function findAll($companyId): array
     {
-        return array_values($this->employees);
+        $data = array_values($this->employees);
+        $data = array_filter($data, function ($item) use ($companyId) {
+            return $item->getCompanyId() == $companyId;
+        });
+        return $data;
     }
 
     /**
@@ -88,5 +97,23 @@ class InMemoryEmployeeRepository implements EmployeeRepository
         }
 
         return $this->employees[$id];
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function createOrUpdateEmployee(Employee $employee)
+    {
+        if (!isset($this->employees[$employee->getId()])) {
+            $this->employees[$employee->getId()] = $employee;
+        } else {
+            $maxId = max(array_map(function($o) {
+                return $o->id;
+            }, $this->employees));
+
+            $this->employees[$maxId] = $employee;
+        }
+
+        $this->employees[$employee->getId()] = $employee;
     }
 }
