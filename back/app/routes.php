@@ -26,5 +26,13 @@ return function (App $app) {
         $group->get('', ListEmployeeAction::class);
         $group->get('/{id}', ViewEmployeeAction::class);
         $group->post('', AddEmployeeAction::class);
+        $group->put('/{id}', function (Request $request, Response $response) {
+            $response->getBody()->write('done');
+            return $response;
+        });
+        $group->delete('/{id}', function (Request $request, Response $response) {
+            $response->getBody()->write('done');
+            return $response;
+        });
     });
 };

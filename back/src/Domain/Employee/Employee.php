@@ -78,6 +78,29 @@ class Employee implements JsonSerializable
         $this->companyId = $companyId;
     }
 
+    public function massiveEdit(array $params)
+    {
+        if (isset($params['name'])) {
+            $this->name = $params['name'];
+        }
+
+        if (isset($params['email'])) {
+            $this->email = $params['email'];
+        }
+        if (isset($params['position'])) {
+            $this->position = $params['position'];
+        }
+        if (isset($params['office'])) {
+            $this->office = $params['office'];
+        }
+        if (isset($params['salary'])) {
+            $this->salary = $params['salary'];
+        }
+        if (isset($params['weeklyHours'])) {
+            $this->weeklyHours = $params['weeklyHours'];
+        }
+    }
+
     /**
      * @return int|null
      */
