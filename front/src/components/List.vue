@@ -28,19 +28,22 @@
                 <v-container>
                   <v-row>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.name" label="Dessert name"></v-text-field>
+                      <v-text-field v-model="editedItem.name" label="Name"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.calories" label="Calories"></v-text-field>
+                      <v-text-field v-model="editedItem.email" label="Email"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.fat" label="Fat (g)"></v-text-field>
+                      <v-text-field v-model="editedItem.position" label="Position"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.carbs" label="Carbs (g)"></v-text-field>
+                      <v-text-field v-model="editedItem.office" label="Office"></v-text-field>
                     </v-col>
                     <v-col cols="12" sm="6" md="4">
-                      <v-text-field v-model="editedItem.protein" label="Protein (g)"></v-text-field>
+                      <v-text-field v-model="editedItem.salary" label="Salary"></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="4">
+                      <v-text-field v-model="editedItem['weekly-hours']" label="Weekly Hours"></v-text-field>
                     </v-col>
                   </v-row>
                 </v-container>
@@ -95,7 +98,8 @@
         { text: 'Position', value: 'position' },
         { text: 'Office', value: 'office' },
         { text: 'Salary', value: 'salary' },
-        { text: 'Weekly Hours', value: 'weekly-hours', sortable: false },
+        { text: 'Weekly Hours', value: 'weekly-hours' },
+        { text: 'Actions', value: 'action', sortable: false },
       ],
       desserts: [],
       editedIndex: -1,
@@ -131,34 +135,33 @@
     },
 
     created () {
-      this.initialize()
+      this.fetchEmployees().then(function() {
+      });
     },
 
     methods: {
       ...mapActions('employee', [
-              'fetchEmployees'
+              'fetchEmployees',
+              'addEmployee',
+              'editEmployee',
+              'deleteEmployee',
       ]),
-      initialize () {
-        this.desserts = [
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-            fat: 6.0,
-            carbs: 24,
-            protein: 4.0,
-          },
-        ]
-      },
 
       editItem (item) {
-        this.editedIndex = this.desserts.indexOf(item)
-        this.editedItem = Object.assign({}, item)
+        this.editedIndex = this.employees.indexOf(item);
+        this.editedItem = Object.assign({}, item);
+        if (this.editedIndex !== -1){
+          this.editEmployee(item);
+        } else {
+          this.addEmployee(item);
+        }
         this.dialog = true
       },
 
       deleteItem (item) {
-        const index = this.desserts.indexOf(item)
-        confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+        const index = this.employees.indexOf(item);
+        this.employees.splice(index, 1);
+        confirm('Are you sure you want to delete this item?') && this.employees.splice(index, 1)
       },
 
       close () {
