@@ -148,37 +148,36 @@
       ]),
 
       editItem (item) {
+        /*eslint-disable */
+        console.log(item);
         this.editedIndex = this.employees.indexOf(item);
         this.editedItem = Object.assign({}, item);
-        if (this.editedIndex !== -1){
-          this.editEmployee(item);
-        } else {
-          this.addEmployee(item);
-        }
         this.dialog = true
       },
 
       deleteItem (item) {
-        const index = this.employees.indexOf(item);
-        this.employees.splice(index, 1);
-        confirm('Are you sure you want to delete this item?') && this.employees.splice(index, 1)
+        /*eslint-disable */
+        console.log(item);
+        this.deleteEmployee(item);
+        // const index = this.employees.indexOf(item);
+        // this.employees.splice(index, 1);
       },
 
       close () {
         this.dialog = false
         setTimeout(() => {
-          this.editedItem = Object.assign({}, this.defaultItem)
-          this.editedIndex = -1
+          this.editedItem = Object.assign({}, this.defaultItem);
+          this.editedIndex = -1;
         }, 300)
       },
 
       save () {
         if (this.editedIndex > -1) {
-          Object.assign(this.desserts[this.editedIndex], this.editedItem)
+          this.editEmployee(this.editedItem);
         } else {
-          this.desserts.push(this.editedItem)
+          this.addEmployee(this.editedItem);
         }
-        this.close()
+        this.close();
       },
     },
   }

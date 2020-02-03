@@ -10,15 +10,15 @@ const employee = {
             state.employees = data;
         },
         editEmployee (state, item) {
-            let editedIndex = this.employees.indexOf(item);
-            state.employees[editedIndex] = item;
+            /*eslint-disable */
+            state.employees[item.id] = item;
         },
         addEmployee (state, item) {
             state.employees.push(item);
         },
         deleteEmployee (state, item) {
-            const index = this.employees.indexOf(item);
-            state.splice(index, 1);
+            const index = state.employees.indexOf(item);
+            state.employees.splice(index, 1);
         },
     },
     actions: {
