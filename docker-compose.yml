@@ -7,6 +7,25 @@ volumes:
     driver: local
 
 services:
+  employees:
+    build:
+      context: ./employees
+      dockerfile: dev.dockerfile
+    restart: unless-stopped
+    tty: true
+    command: php -S 0.0.0.0:8000 -t public
+    environment:
+      SERVICE_NAME: employees
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    ports:
+      - 8000:8000
+    volumes:
+      - ./employees/:/var/www
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - my-network
+
   back:
     build:
       context: ./back
