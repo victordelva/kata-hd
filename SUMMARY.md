@@ -28,7 +28,7 @@ Root folder contains docker files.
 
 - Validate parameters
 - Improve company Authentication
-- Rename Back folder
+- Rename Back folder, for a proper service name like "employees" for example
 - Use MongoDB
 
 ## More
@@ -39,3 +39,5 @@ as It was Laravel or Symfony.
 
 I hope I proved with this test I can learn very fast, I can get used to any new framework very fast,
 and can follow a proper architecture.
+
+Here you can find the same test solved using only laravel: https://github.com/vicalle12/kata-hd-laravel
